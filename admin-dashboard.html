@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Admin Terminal | Nexelra Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page admin-mode">
+
+    <div class="dash-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="sidebar-header">
+                <button class="dash-close-btn" id="dashSidebarClose" title="Close Sidebar" style="display: none;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                    <div class="logo-mark">
+                        <svg width="38" height="38" viewBox="0 0 100 100">
+                            <!-- Outer Gold Hexagon -->
+                            <polygon points="50,5 93,30 93,70 50,95 7,70 7,30" fill="none" stroke="var(--gold)"
+                                stroke-width="4" />
+                            <!-- Inner Dark Hexagon Fill -->
+                            <polygon points="50,12 85,32 85,68 50,88 15,68 15,32" fill="rgba(20,28,40,0.8)" />
+                            <text x="50" y="60" text-anchor="middle" fill="var(--gold)" font-size="24"
+                                font-family="var(--font-display)" font-weight="700">NX</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-brand">NEXELRA</span>
+                        <span class="logo-tagline">CONSULTING</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-label">Global Control</div>
+                <a href="#" class="side-link active" data-tab="control-center">
+                    <i class="fa-solid fa-tower-observation"></i>
+                    <span>Control Center</span>
+                </a>
+                <a href="#" class="side-link" data-tab="entity-grid">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span>Entity Grid</span>
+                </a>
+
+                <div class="sidebar-label">Operational</div>
+                <a href="#" class="side-link" data-tab="nexus-projects">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Nexus Projects</span>
+                </a>
+                <a href="#" class="side-link" data-tab="audit-matrix">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span>Audit Matrix</span>
+                </a>
+
+                <div class="sidebar-label">System</div>
+                <a href="#" class="side-link" data-tab="base-settings">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Base Settings</span>
+                </a>
+                <a href="index.html" class="side-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span style="color:var(--gold);">Exit Root</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="sidebar-globe-btn" id="dashGlobe" title="Toggle LTR/RTL">
+                    <i class="fa-solid fa-globe"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dash-main">
+            <!-- Mobile Toggle -->
+            <button class="dash-menu-toggle" id="dashMenuToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <header class="dash-header">
+                <div class="dash-title">
+                    <h2 id="currentTabTitle">Control Center</h2>
+                    <p id="currentTabSubtitle">Global Nexelra infrastructure and entity oversight.</p>
+                </div>
+                <div class="dash-controls">
+                    <div class="admin-badge">
+                        <i class="fa-solid fa-shield-check"></i> Root Access Enabled
+                    </div>
+                    <button class="btn btn-gold btn-sm">Force Refresh</button>
+                </div>
+            </header>
+
+            <div id="dashContent">
+                <!-- 1. CONTROL CENTER -->
+                <div class="tab-content active" id="control-center">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Uptime Velocity</div>
+                            <div class="kpi-value">99.98%</div>
+                            <div class="kpi-trend up"><i class="fa-solid fa-check"></i> High Stability</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Active Proxies</div>
+                            <div class="kpi-value">1,200+</div>
+                            <div class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +45 Active</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Threat Level</div>
+                            <div class="kpi-value">Low</div>
+                            <div class="kpi-trend"><i class="fa-solid fa-shield-virus"></i> Protected</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">System Load</div>
+                            <div class="kpi-value">24%</div>
+                            <div class="kpi-trend"><i class="fa-solid fa-bolt"></i> Optimal</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Infrastructure Load (Global)</h3>
+                            <div class="graph-lines">
+                                <svg class="line-svg">
+                                    <path class="line-path" d="M0,180 L80,150 L160,170 L240,120 L320,90 L400,60"></path>
+                                </svg>
+                                <div class="line-point" style="left: 0%; bottom: 10%;"></div>
+                                <div class="line-point" style="left: 20%; bottom: 25%;"></div>
+                                <div class="line-point" style="left: 40%; bottom: 15%;"></div>
+                                <div class="line-point" style="left: 60%; bottom: 40%;"></div>
+                                <div class="line-point" style="left: 80%; bottom: 55%;"></div>
+                                <div class="line-point" style="left: 100%; bottom: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Regional Health</h3>
+                            <div class="rings-grid">
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 92"><span>92%</span></div>
+                                    <div class="ring-label">Americas</div>
+                                </div>
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 98"><span>98%</span></div>
+                                    <div class="ring-label">Europe</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Entity Growth Projection</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Institutional</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Retail High-Net</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 55%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Foreign Mandates</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Security Radar</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(60deg);"></div>
+                                <div class="radar-line" style="transform: rotate(150deg);"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operational-pulse mt-40">
+                        <h3 class="section-subtitle">Infrastructure Core Metrics</h3>
+                        <div class="charts-grid-2">
+                            <div class="chart-card">
+                                <h3>Health Index</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 85%, var(--gold-dark) 85% 95%, #1a2336 95% 100%);">
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Good</div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span> Warn
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Down</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Load Distribution</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 30%, var(--gold-dark) 30% 60%, #1a2336 60% 100%);">
+                                        <span>30%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> System
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span>
+                                            Network</div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Data</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. ENTITY GRID -->
+                <div class="tab-content" id="entity-grid">
+                    <div class="stat-table-card">
+                        <div class="table-header">
+                            <h3>Authorized Entities</h3>
+                            <div class="table-actions">
+                                <input type="text" placeholder="Filter entities..." class="admin-search">
+                                <button class="btn btn-gold btn-sm"><i class="fa-solid fa-plus"></i> New User</button>
+                            </div>
+                        </div>
+                        <table class="stat-table">
+                            <thead>
+                                <tr>
+                                    <th>Entity Name</th>
+                                    <th>Access level</th>
+                                    <th>Last Sync</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Director Alpha</td>
+                                    <td><span class="badge blue">Root</span></td>
+                                    <td>2m ago</td>
+                                    <td><span class="status-dot online"></span> Active</td>
+                                    <td><button class="icon-btn" title="Edit"><i
+                                                class="fa-solid fa-pen-to-square"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Mandate Vault 04</td>
+                                    <td><span class="badge">Standard</span></td>
+                                    <td>1h ago</td>
+                                    <td><span class="status-dot online"></span> Active</td>
+                                    <td><button class="icon-btn" title="Edit"><i
+                                                class="fa-solid fa-pen-to-square"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Compliance Unit B</td>
+                                    <td><span class="badge gold">Audit</span></td>
+                                    <td>4h ago</td>
+                                    <td><span class="status-dot offline"></span> Sleep</td>
+                                    <td><button class="icon-btn" title="Edit"><i
+                                                class="fa-solid fa-pen-to-square"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>External Auditor</td>
+                                    <td><span class="badge gray">ReadOnly</span></td>
+                                    <td>Yesterday</td>
+                                    <td><span class="status-dot online"></span> Active</td>
+                                    <td><button class="icon-btn" title="Edit"><i
+                                                class="fa-solid fa-pen-to-square"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Entity Activity Map</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Session Latency</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="bottom: 15%; left: 10%;"></div>
+                                <div class="dot" style="bottom: 45%; left: 35%;"></div>
+                                <div class="dot" style="bottom: 25%; left: 60%;"></div>
+                                <div class="dot" style="bottom: 85%; left: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operational-pulse mt-40">
+                        <h3 class="section-subtitle">Entity Distribution</h3>
+                        <div class="charts-grid-2">
+                            <div class="chart-card">
+                                <h3>Role Assignment</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 20%, var(--gold-dark) 20% 50%, #1a2336 50% 100%);">
+                                        <span>20%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Admin</div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span>
+                                            Manager</div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Standard
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Access Status</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 75%, var(--gold-dark) 75% 90%, #1a2336 90% 100%);">
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Authorized
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span>
+                                            Pending</div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Restricted
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. NEXUS PROJECTS -->
+                <div class="tab-content" id="nexus-projects">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Active Mandates</div>
+                            <div class="kpi-value">52</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Global Reach</div>
+                            <div class="kpi-value">48 Countries</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Pipeline Value</div>
+                            <div class="kpi-value">$5.8B</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Avg ROI</div>
+                            <div class="kpi-value">14.2%</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Mandate Propagation</h3>
+                        <div class="graph-bubbles">
+                            <div class="bubble" style="width: 100px; height: 100px; top: 30px; left: 10%;">Real Estate
+                            </div>
+                            <div class="bubble" style="width: 70px; height: 70px; top: 120px; left: 35%;">Energy</div>
+                            <div class="bubble" style="width: 90px; height: 90px; top: 50px; left: 60%;">FinTech</div>
+                            <div class="bubble" style="width: 80px; height: 80px; bottom: 20px; right: 10%;">BioTech
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Market Penetration</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>MENA Region</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>APAC Hub</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 82%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>DACH Market</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 65%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Resource Efficiency</h3>
+                            <div class="rings-grid">
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 74"><span>74%</span></div>
+                                    <div class="ring-label">Capital</div>
+                                </div>
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 88"><span>88%</span></div>
+                                    <div class="ring-label">Human Core</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operational-pulse mt-40">
+                        <h3 class="section-subtitle">Market Metrics</h3>
+                        <div class="charts-grid-2">
+                            <div class="chart-card">
+                                <h3>Capital ROI</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 65%, var(--gold-dark) 65% 90%, #1a2336 90% 100%);">
+                                        <span>65%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Realized
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span>
+                                            Projected</div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Risk</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Regional Share</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 40%, var(--gold-dark) 40% 70%, #1a2336 70% 100%);">
+                                        <span>40%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> EMEA</div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span> APAC
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Americas
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. AUDIT MATRIX -->
+                <div class="tab-content" id="audit-matrix">
+                    <div class="stat-table-card">
+                        <h3>Critical Audit Logs</h3>
+                        <table class="stat-table">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Event</th>
+                                    <th>Origin</th>
+                                    <th>Integrity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12:34:56</td>
+                                    <td>Credential Escalation</td>
+                                    <td>192.168.1.44</td>
+                                    <td><span class="badge gold">Verified</span></td>
+                                </tr>
+                                <tr>
+                                    <td>11:22:10</td>
+                                    <td>Database Migration</td>
+                                    <td>Nexus-Cloud-01</td>
+                                    <td><span class="badge blue">Safe</span></td>
+                                </tr>
+                                <tr>
+                                    <td>09:45:33</td>
+                                    <td>Foreign Key InSync</td>
+                                    <td>API-Gateway</td>
+                                    <td><span class="badge blue">Safe</span></td>
+                                </tr>
+                                <tr>
+                                    <td>08:12:00</td>
+                                    <td>Mass Data Export</td>
+                                    <td>Director Alpha</td>
+                                    <td><span class="badge gold">Authorized</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Threat Probability Matrix</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Encryption Strength</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line"
+                                    style="transform: rotate(0deg); border-style: solid; border-width: 2px;"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operational-pulse mt-40">
+                        <h3 class="section-subtitle">Security Analysis</h3>
+                        <div class="charts-grid-2">
+                            <div class="chart-card">
+                                <h3>Threat Integrity</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 92%, var(--gold-dark) 92% 98%, #1a2336 98% 100%);">
+                                        <span>92%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Secure
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span>
+                                            Warning</div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Critical
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Log Density</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 55%, var(--gold-dark) 55% 85%, #1a2336 85% 100%);">
+                                        <span>55%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Filtered
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span> Raw
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Cached
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. BASE SETTINGS -->
+                <div class="tab-content" id="base-settings">
+                    <div class="chart-container">
+                        <div class="chart-card settings-panel">
+                            <h3>System Directives</h3>
+                            <div class="infographic-list">
+                                <div class="info-item">
+                                    <label>Autonomous Execution</label>
+                                    <span class="admin-toggle active"></span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Multi-Factor Mandate</label>
+                                    <span class="admin-toggle active"></span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Dark Mode Default</label>
+                                    <span class="admin-toggle active"></span>
+                                </div>
+                                <div class="info-item">
+                                    <label>Public Analytics</label>
+                                    <span class="admin-toggle"></span>
+                                </div>
+                            </div>
+                            <button class="btn btn-gold btn-sm w-100 mt-20">Commit Changes</button>
+                        </div>
+                        <div class="chart-card">
+                            <h3>System Resilience</h3>
+                            <div class="graph-lines">
+                                <svg class="line-svg">
+                                    <path class="line-path" d="M0,50 L100,60 L200,40 L300,50 L400,45"></path>
+                                </svg>
+                                <div class="line-point" style="left: 0%; bottom: 85%;"></div>
+                                <div class="line-point" style="left: 50%; bottom: 80%;"></div>
+                                <div class="line-point" style="left: 100%; bottom: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="operational-pulse mt-40">
+                        <h3 class="section-subtitle">Directive Allocations</h3>
+                        <div class="charts-grid-2">
+                            <div class="chart-card">
+                                <h3>Task Priority</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 60%, var(--gold-dark) 60% 80%, #1a2336 80% 100%);">
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Critical
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span> High
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Routine
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Memory Pool</h3>
+                                <div class="graph-pie-container">
+                                    <div class="pie-chart"
+                                        style="background: conic-gradient(var(--gold) 0% 40%, var(--gold-dark) 40% 70%, #1a2336 70% 100%);">
+                                        <span>40%</span>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item"><span class="legend-color col-gold"></span> Active
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-gold-dark"></span> Buffer
+                                        </div>
+                                        <div class="legend-item"><span class="legend-color col-deep"></span> Free</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

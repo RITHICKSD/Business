@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Contact Us | Nexelra Consulting</title>
+    <meta name="description"
+        content="Reach the command center of global strategy. Secure, priority channels for elite enterprises." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Aggressive Animation Lockdown for Contact Hero */
+        .contact-hero,
+        .contact-hero * {
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════ NAVBAR ══════════════════════════════════════════ -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <div class="logo-mark">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#gGold)"
+                            stroke-width="1.5" />
+                        <text x="18" y="22" text-anchor="middle" fill="url(#gGold)" font-size="11"
+                            font-family="Cormorant Garamond" font-weight="700">NX</text>
+                        <defs>
+                            <linearGradient id="gGold">
+                                <stop offset="0%" stop-color="#D4AF37" />
+                                <stop offset="100%" stop-color="#F5D16A" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text"><span class="logo-brand">NEXELRA</span><span
+                        class="logo-tagline">CONSULTING</span></div>
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item has-dropdown">
+                    <a href="index.html" class="nav-link">Home <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="index2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Dashboard <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-right">
+                <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="globe-btn" id="globeBtn"><i class="fa-solid fa-globe"></i></button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-topbar">
+            <button class="drawer-globe" id="drawerGlobe"><i class="fa-solid fa-globe"></i></button>
+            <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="drawer-nav">
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileHomeToggle">
+                    HOME <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileHomeSub">
+                    <a href="index.html" class="drawer-sub-link">Home 1</a>
+                    <a href="index2.html" class="drawer-sub-link">Home 2</a>
+                </div>
+            </div>
+            <div class="drawer-item"><a href="about.html" class="drawer-link">ABOUT</a></div>
+            <div class="drawer-item"><a href="services.html" class="drawer-link">SERVICES</a></div>
+            <div class="drawer-item"><a href="contact.html" class="drawer-link">CONTACT</a></div>
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileDashToggle">
+                    DASHBOARD <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileDashSub">
+                    <a href="user-dashboard.html" class="drawer-sub-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="drawer-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <a href="login.html" class="btn btn-gold drawer-login-btn">LOGIN</a>
+        </nav>
+        <div class="drawer-footer">
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ SECTION 1 — CONTACT HERO ══════════════════════════════════════════ -->
+    <section class="contact-hero">
+        <div class="container">
+            <p class="section-eyebrow">Direct Uplink</p>
+            <h1 class="hero-title">Establish <span class="gold">Connectivity</span></h1>
+            <p class="hero-subtitle">The command center for global enterprise transformation is at your service. Secure
+                channels for visionary leadership.</p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 2 — HQ LOCATIONS ══════════════════════════════════════════ -->
+    <section class="section contact-block bg-deep" id="hq">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <h2 class="section-title">Global <span class="gold">Command Centers</span></h2>
+            </div>
+            <div class="hq-grid">
+                <div class="hq-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>Zurich HQ</h3>
+                    <p>Bahnhofstrasse 45<br>8001 Zurich, Switzerland<br>T: +41 44 212 9000</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-tower-observation"></i>
+                    <h3>Dubai Hub</h3>
+                    <p>DIFC, Gate Village 5<br>Dubai, United Arab Emirates<br>T: +971 4 362 0000</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-city"></i>
+                    <h3>Singapore</h3>
+                    <p>Marina Bay Sands North Tower<br>Singapore 018956<br>T: +65 6688 8888</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 3 — ENCRYPTED CHANNELS ══════════════════════════════════════════ -->
+    <section class="section contact-block" id="channels">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="port.jpg" alt="Secure Channels" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">256-Bit Albedo</p>
+                    <h2 class="section-title">Priority <span class="gold">Portals</span></h2>
+                    <p class="section-body">Our encrypted portals provide high-net-worth individuals and corporate
+                        boards with a direct, secure line to our senior directives.</p>
+                    <div class="portal-grid">
+                        <div class="portal-card">
+                            <h4>Ultra-Priority</h4>
+                            <p>Immediate uplink for current retainer clients.</p>
+                        </div>
+                        <div class="portal-card">
+                            <h4>General Inquiry</h4>
+                            <p>Institutional queries and partnership requests.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 4 — INQUIRY FORM ══════════════════════════════════════════ -->
+    <section class="section contact-block bg-deep" id="inquiry">
+        <div class="container">
+            <div class="contact-split">
+                <div class="contact-form-wrapper" data-aos="fade-right">
+                    <h3 class="gold mb-20">Secure Dispatch</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="Institutional Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Corporate Email</label>
+                            <input type="email" class="form-control" placeholder="name@enterprise.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Sector</label>
+                            <select class="form-control">
+                                <option>Finance & M&A</option>
+                                <option>Sovereign Strategy</option>
+                                <option>Digital Transformation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4"
+                                placeholder="Briefly describe the objective..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100">Engage Objective</button>
+                    </form>
+                </div>
+                <div class="contact-info" data-aos="fade-left">
+                    <p class="section-eyebrow">Client Support</p>
+                    <h2 class="section-title">Direct <span class="gold">Engagement</span></h2>
+                    <p class="section-body">Our intake directives review all inquiries within a 4-hour window for
+                        priority alignment.</p>
+                    <div class="stat-pillars">
+                        <div class="stat-p"><span>
+                                < 4h</span><label>Response Time</label></div>
+                        <div class="stat-p"><span>100%</span><label>Secure Albedo</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 5 — MEDIA & PRESS ══════════════════════════════════════════ -->
+    <section class="section contact-block" id="media">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="med.jpeg" alt="Media" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Public Relations</p>
+                    <h2 class="section-title">Media & <span class="gold">Insights</span></h2>
+                    <p class="section-body">For interview requests, expert commentary, or key-note speaking engagements,
+                        contact our image directives.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-microphone"></i>
+                            <h4>Speaker Bureau</h4>
+                            <p>Coordinating C-suite presence at global summits.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-newspaper"></i>
+                            <h4>Press Assets</h4>
+                            <p>High-resolution brand assets and legal bios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 6 — PARTNERSHIP ══════════════════════════════════════════ -->
+    <section class="section contact-block bg-deep" id="partner">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Strategic <span class="gold">Orchestration</span></h2>
+                <p>Establishing an alliance with Nexelra follows a rigorous vetting protocol.</p>
+            </div>
+            <div class="process-steps">
+                <div class="p-step" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <h4>Vetting</h4>
+                    <p>Confidential initial audit of synergies.</p>
+                </div>
+                <div class="p-step" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <h4>Alignment</h4>
+                    <p>Strategic goal mapping and resource commitment.</p>
+                </div>
+                <div class="p-step" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h4>Integration</h4>
+                    <p>Seamless operational launch and scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 7 — REGIONAL NETWORK ══════════════════════════════════════════ -->
+    <section class="section contact-block" id="regional">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="regio.jpg" alt="Global Network" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Global Reach</p>
+                    <h2 class="section-title">Regional <span class="gold">Network</span></h2>
+                    <p class="section-body">Our footprint extends across 40 nations, providing local intelligence with
+                        global albedo.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card"><i class="fa-solid fa-globe"></i>
+                            <h4>EMEA</h4>
+                            <p>London, Paris, Frankfurt.</p>
+                        </div>
+                        <div class="cap-card"><i class="fa-solid fa-earth-asia"></i>
+                            <h4>APAC</h4>
+                            <p>Tokyo, Sydney, Shanghai.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 8 — RESPONSE ALBEDO ══════════════════════════════════════════ -->
+    <section class="section contact-block bg-deep" id="albedo">
+        <div class="container text-center">
+            <h2 class="section-title" data-aos="fade-up">Intelligence <span class="gold">Thresholds</span></h2>
+            <div class="contact-stats" data-aos="zoom-in">
+                <div class="stat-p"><span>98%</span><label>Resolution Rate</label></div>
+                <div class="stat-p"><span>24/7</span><label>Operations Room</label></div>
+                <div class="stat-p"><span>
+                        < 15m</span><label>Emergency Uplink</label></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 9 — FAQ ══════════════════════════════════════════ -->
+    <section class="section contact-block" id="faq">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <h2 class="section-title">Neural <span class="gold">Assistance</span></h2>
+            </div>
+            <div class="hq-grid">
+                <div class="hq-card" data-aos="fade-up">
+                    <h4>How to engage?</h4>
+                    <p>Submit a secure dispatch form or contact a regional command center for an initial audit.</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Confidentiality?</h4>
+                    <p>All communication is bound by 256-bit Swiss-grade secrecy and non-disclosure albedo.</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-aos-delay="200">
+                    <h4>On-site visits?</h4>
+                    <p>HQ access is by appointment only, strictly for institutional partners and directives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 10 — FINAL CTA ══════════════════════════════════════════ -->
+    <section class="section cta-section" id="final-contact">
+        <div class="container">
+            <div class="cta-inner" data-aos="flip-up">
+                <h2 class="cta-title">Ready to <span class="gold">Initiate?</span></h2>
+                <p class="cta-text">Enter the inner circle of global strategy. Your transformation starts with a single
+                    uplink.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-gold">Connect Hub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="logo-mark">
+                            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+                                <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#fGold)"
+                                    stroke-width="1.5" />
+                                <text x="18" y="22" text-anchor="middle" fill="url(#fGold)" font-size="11"
+                                    font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                                <defs>
+                                    <linearGradient id="fGold" x1="0" y1="0" x2="36" y2="36"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="100%" stop-color="#F5D16A" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-brand">NEXELRA</span>
+                            <span class="logo-tagline">CONSULTING</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Elevating enterprises through strategic clarity, execution excellence, and
+                        transformative leadership — globally.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="#">Leadership</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Insights</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">Strategy Advisory</a>
+                    <a href="services.html">M&A Consulting</a>
+                    <a href="services.html">Digital Transformation</a>
+                    <a href="services.html">Risk Intelligence</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Get In Touch</a>
+                    <a href="#">Media Inquiries</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Nexelra Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-top" id="backTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+
+</html>

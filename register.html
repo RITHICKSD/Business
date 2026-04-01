@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Register | Nexelra Consulting</title>
+    <meta name="description" content="Secure registration portal for Nexelra Consulting." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="auth-page">
+
+    <button class="auth-globe" id="globeBtn" title="Toggle LTR / RTL">
+        <i class="fa-solid fa-globe"></i>
+    </button>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="nav-logo"
+                    style="text-decoration: none; justify-content: center; margin-bottom: 24px;">
+                    <div class="logo-mark">
+                        <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
+                            <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#gGoldAuthReg)"
+                                stroke-width="1.5" />
+                            <polygon points="18,7 29,13 29,23 18,29 7,23 7,13" fill="url(#gGoldFillAuthReg)"
+                                opacity="0.15" />
+                            <text x="18" y="22" text-anchor="middle" fill="url(#gGoldAuthReg)" font-size="11"
+                                font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                            <defs>
+                                <linearGradient id="gGoldAuthReg" x1="0" y1="0" x2="36" y2="36"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#D4AF37" />
+                                    <stop offset="50%" stop-color="#F5D16A" />
+                                    <stop offset="100%" stop-color="#B8960C" />
+                                </linearGradient>
+                                <linearGradient id="gGoldFillAuthReg" x1="0" y1="0" x2="36" y2="36"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#D4AF37" />
+                                    <stop offset="100%" stop-color="#F5D16A" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-brand" style="font-size: 1.3rem;">NEXELRA</span>
+                        <span class="logo-tagline">CONSULTING</span>
+                    </div>
+                </a>
+                <h2 class="auth-title">Create your account</h2>
+            </div>
+
+            <form class="auth-form" action="login.html">
+                <div class="form-group auth-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group auth-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group auth-group">
+                    <label>Phone Number</label>
+                    <input type="tel" class="form-control" placeholder="(555) 123-4567" required>
+                </div>
+                <div class="form-group auth-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Create a password" required>
+                </div>
+                <div class="form-group auth-group">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm your password" required>
+                </div>
+
+                <div class="auth-actions terms-group">
+                    <label class="remember-me terms-check">
+                        <input type="checkbox" required>
+                        <span class="terms-text">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                                Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100 mt-4">CREATE ACCOUNT</button>
+
+                <p class="auth-footer-text">
+                    Already have an account? <a href="login.html">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

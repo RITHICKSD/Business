@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Services | Nexelra Consulting | Global Strategic Solutions</title>
+    <meta name="description"
+        content="Our comprehensive suite of consulting services — from sovereign strategy to digital albedo — empowers global enterprises for the next era." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Aggressive Animation Lockdown for Services Hero */
+        .service-hero,
+        .service-hero-bg,
+        .service-hero-content,
+        .service-hero-content * {
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════ NAVBAR ══════════════════════════════════════════ -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <div class="logo-mark">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#gGold)"
+                            stroke-width="1.5" />
+                        <text x="18" y="22" text-anchor="middle" fill="url(#gGold)" font-size="11"
+                            font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                        <defs>
+                            <linearGradient id="gGold" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#D4AF37" />
+                                <stop offset="50%" stop-color="#F5D16A" />
+                                <stop offset="100%" stop-color="#B8960C" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-brand">NEXELRA</span>
+                    <span class="logo-tagline">CONSULTING</span>
+                </div>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link" id="homeLink">Home <i
+                            class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu" id="homeDropdown">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="index2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link active">Services</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link" id="dashLink">Dashboard <i
+                            class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu" id="dashDropdown">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-right">
+                <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="globe-btn" id="globeBtn" title="Toggle LTR / RTL">
+                    <i class="fa-solid fa-globe"></i>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-topbar">
+            <button class="drawer-globe" id="drawerGlobe" aria-label="Toggle direction">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileHomeToggle">
+                    HOME <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileHomeSub">
+                    <a href="index.html" class="drawer-sub-link">Home 1</a>
+                    <a href="index2.html" class="drawer-sub-link">Home 2</a>
+                </div>
+            </div>
+            <div class="drawer-item"><a href="about.html" class="drawer-link">ABOUT</a></div>
+            <div class="drawer-item"><a href="services.html" class="drawer-link">SERVICES</a></div>
+            <div class="drawer-item"><a href="contact.html" class="drawer-link">CONTACT</a></div>
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileDashToggle">
+                    DASHBOARD <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileDashSub">
+                    <a href="user-dashboard.html" class="drawer-sub-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="drawer-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <a href="login.html" class="btn btn-gold drawer-login-btn">LOGIN</a>
+        </nav>
+        <div class="drawer-footer">
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ SECTION 1 — HERO ══════════════════════════════════════════ -->
+    <section class="section service-hero" id="hero">
+        <div class="service-hero-bg"></div>
+        <div class="container hero-container">
+            <div class="service-hero-content">
+                <p class="section-eyebrow">A Compendium of Excellence</p>
+                <h1 class="hero-title">Strategic Solutions <br /><span class="gold">for a New Era.</span></h1>
+                <p class="hero-subtitle">Bespoke advisory, precision execution, and institutional depth to navigate the
+                    world's most complex challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 2 — M&A ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="ma">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="div.jpg" alt="M&A" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Enterprise Value</p>
+                    <h2 class="section-title">M&A & <span class="gold">Strategic Divestitures</span></h2>
+                    <p class="section-body">We navigate the intricacies of billion-dollar transitions with surgical
+                        precision. From pre-deal due diligence to post-merger integration, we ensure maximum value
+                        realization and cultural synthesis for global enterprises.</p>
+                    <div class="stat-pillars">
+                        <div class="stat-p"><span>$40B+</span><label>Assets Advised</label></div>
+                        <div class="stat-p"><span>150+</span><label>Global Exits</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 3 — DIGITAL ══════════════════════════════════════════ -->
+    <section class="section service-block" id="digital">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="dig.webp" alt="Digital Transformation" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Technological Albedo</p>
+                    <h2 class="section-title">Digital <span class="gold">Transformation</span></h2>
+                    <p class="section-body">Our digital albedo framework redefines industrial standards by integrating
+                        advanced AI architecture with cloud-native resilience, ensuring your infrastructure is scaled
+                        for the next decade of innovation.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-microchip"></i>
+                            <h4>AI Integration</h4>
+                            <p>Architecting enterprise intelligence from the core.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-cloud"></i>
+                            <h4>Cloud Albedo</h4>
+                            <p>Hyper-scaling infrastructure with zero-latency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 4 — SOVEREIGN ══════════════════════════════════════════ -->
+    <section class="section service-block" id="sovereign">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="regulatory_mastery.png" alt="Sovereign Strategy" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Global Geopolitics</p>
+                    <h2 class="section-title">Sovereign <span class="gold">Strategy</span></h2>
+                    <p class="section-body">We provide nation-scale economic positioning and FDI orchestration for
+                        sovereign entities, bridging the gap between national interests and global capital markets.</p>
+                    <div class="stat-pillars">
+                        <div class="stat-p"><span>12</span><label>Nation-States</label></div>
+                        <div class="stat-p"><span>$200B</span><label>FDI Orchestrated</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 5 — RISK ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="risk">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="risk.jpg" alt="Risk Intelligence" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Predictive Mastery</p>
+                    <h2 class="section-title">Risk <span class="gold">Intelligence</span></h2>
+                    <p class="section-body">Our quantum-led risk assessment models detect and mitigate tail-risk events
+                        long before they manifest as market dislocations, protecting institutional capital across every
+                        horizon.</p>
+                    <div class="process-steps">
+                        <div class="p-step">
+                            <h4>Detect</h4>
+                            <p>Scanning signals.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Analyze</h4>
+                            <p>Quantum vetting.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Protect</h4>
+                            <p>Tail-risk hedging.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 6 — ESG ══════════════════════════════════════════ -->
+    <section class="section service-block" id="esg">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="gov.jpg" alt="ESG" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Legacy Building</p>
+                    <h2 class="section-title">Sustainable <span class="gold">Governance</span></h2>
+                    <p class="section-body">We build corporate legacies that thrive through the transition to a
+                        low-carbon economy, integrating ESG markers directly into your organizational DNA for measurable
+                        statutory advantage.</p>
+                    <div class="process-steps">
+                        <div class="p-step">
+                            <h4>Audit</h4>
+                            <p>Emission maps.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Arch</h4>
+                            <p>Green albedo.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Cert</h4>
+                            <p>Global trust.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 7 — CRISIS ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="crisis">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="cris.jpg" alt="Crisis Management" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Battle-Tested</p>
+                    <h2 class="section-title">Crisis <span class="gold">Resilience</span></h2>
+                    <p class="section-body">Our rapid-response orchestration preserves reputational albedo during
+                        critical market events, ensuring operational continuity even in the most volatile environments.
+                    </p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-shield-virus"></i>
+                            <h4>Defense</h4>
+                            <p>Reputational armor and rapid containment.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-rotate-right"></i>
+                            <h4>Recovery</h4>
+                            <p>Operational restoration within minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 8 — SUPPLY CHAIN ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="supply-chain">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="supp.jpg" alt="Supply Chain" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Vascular Optimization</p>
+                    <h2 class="section-title">Supply Chain <span class="gold">Mastery</span></h2>
+                    <p class="section-body">We re-engineer global nodes into high-velocity supply networks. By applying
+                        predictive albedo to logistics and procurement, we transform supply chains from cost centers
+                        into strategic advantage engines.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <h4>Logistics</h4>
+                            <p>Global node synchronization.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                            <h4>Inventory</h4>
+                            <p>Just-in-albedo predictive stocking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 9 — FINANCIAL ══════════════════════════════════════════ -->
+    <section class="section service-block" id="finance">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="fin.webp" alt="Financial Engineering" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Capital Wisdom</p>
+                    <h2 class="section-title">Financial <span class="gold">Engineering</span></h2>
+                    <p class="section-body">Our financial architects craft bespoke capital structures and treasury
+                        frameworks that maximize yield albedo while maintaining rigorous liquidity buffers for even the
+                        most complex multinational portfolios.</p>
+                    <div class="stat-pillars">
+                        <div class="stat-p"><span>1.8x</span><label>Yield Albedo</label></div>
+                        <div class="stat-p"><span>$12B</span><label>Debt Recast</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 10 — HUMAN CAPITAL ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="human">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="hum.jpg" alt="Human Capital" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Elite Potential</p>
+                    <h2 class="section-title">Leadership <span class="gold">Dynamics</span></h2>
+                    <p class="section-body">Elevating C-suite performance through cognitive leadership frameworks and
+                        succession albedo. We ensure that the future of your organization is secured by a lineage of
+                        high-impact directives.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <h4>Succession</h4>
+                            <p>Identifying the next 100 years of leadership.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-dna"></i>
+                            <h4>Culture</h4>
+                            <p>Hard-coding excellence into the organization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 11 — COMPLIANCE ══════════════════════════════════════════ -->
+    <section class="section service-block" id="compliance">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="compl.jpg" alt="Compliance" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Ethical Fortress</p>
+                    <h2 class="section-title">Regulatory <span class="gold">Mastery</span></h2>
+                    <p class="section-body">Fortifying your operation with zero-breach statutory frameworks. We manage
+                        global anti-corruption and AML audits with institutional discretion and absolute legal albedo.
+                    </p>
+                    <div class="process-steps">
+                        <div class="p-step">
+                            <h4>Scan</h4>
+                            <p>Blind spots.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Fortify</h4>
+                            <p>Global shields.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Liaise</h4>
+                            <p>Statutory calm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 12 — MARKET ENTRY ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="market">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="amr.jpg" alt="Market Entry" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">New Frontiers</p>
+                    <h2 class="section-title">Global <span class="gold">Expansion</span></h2>
+                    <p class="section-body">Accelerating your trajectory into emerging markets through vetted
+                        stakeholder networks and local alpha. We enable an instant operational footprint in any
+                        strategic region globally.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <h4>Local Alpha</h4>
+                            <p>Instant operational footprint in any region.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h4>Partners</h4>
+                            <p>Tier-1 vetted stakeholder networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 13 — CYBER ══════════════════════════════════════════ -->
+    <section class="section service-block" id="cyber">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="cyb.jpg" alt="Cybersecurity" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Zero Trust Architecture</p>
+                    <h2 class="section-title">Cyber <span class="gold">Armor</span></h2>
+                    <p class="section-body">Defending your institutional assets with diamond-grade security and
+                        blockchain-secured operation protocols. Our Zero Trust albedo ensures that infiltration is a
+                        mathematical impossibility.</p>
+                    <div class="stat-pillars">
+                        <div class="stat-p"><span>99.9%</span><label>Threat Albedo</label></div>
+                        <div class="stat-p"><span>Zero</span><label>Infiltration Incidents</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 14 — BRAND ══════════════════════════════════════════ -->
+    <section class="section service-block bg-deep" id="brand">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="brand.jpg" alt="Brand Strategy" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Alchemical Perception</p>
+                    <h2 class="section-title">Institutional <span class="gold">Identity</span></h2>
+                    <p class="section-body">Crafting the narrative of global authority. We build premium brand
+                        architectures that dominate discourse and elevate your institutional image to the pinnacle of
+                        market perception.</p>
+                    <div class="capability-grid">
+                        <div class="cap-card">
+                            <i class="fa-solid fa-signature"></i>
+                            <h4>Signature</h4>
+                            <p>Crafting the visual language of authority.</p>
+                        </div>
+                        <div class="cap-card">
+                            <i class="fa-solid fa-bullhorn"></i>
+                            <h4>Narrative</h4>
+                            <p>Dominating the global discourse.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 15 — INNOVATION LAB ══════════════════════════════════════════ -->
+    <section class="section service-block" id="lab">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="iinp.jpeg" alt="Innovation Lab" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Beyond Tomorrow</p>
+                    <h2 class="section-title">Innovation <span class="gold">Lab R&D</span></h2>
+                    <p class="section-body">Our moonshot incubation labs future-cast the next decade of disruptive
+                        technology, from quantum computing to synthetic biology albedo, ensuring you lead where others
+                        merely follow.</p>
+                    <div class="process-steps">
+                        <div class="p-step">
+                            <h4>Dream</h4>
+                            <p>Forecast.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Build</h4>
+                            <p>Prototype.</p>
+                        </div>
+                        <div class="p-step">
+                            <h4>Launch</h4>
+                            <p>Scaling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="logo-mark">
+                            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+                                <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#fGold)"
+                                    stroke-width="1.5" />
+                                <text x="18" y="22" text-anchor="middle" fill="url(#fGold)" font-size="11"
+                                    font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                                <defs>
+                                    <linearGradient id="fGold" x1="0" y1="0" x2="36" y2="36"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="100%" stop-color="#F5D16A" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-brand">NEXELRA</span>
+                            <span class="logo-tagline">CONSULTING</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Elevating enterprises through strategic clarity, execution excellence, and
+                        transformative leadership — globally.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="#">Leadership</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Insights</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">Strategy Advisory</a>
+                    <a href="services.html">M&A Consulting</a>
+                    <a href="services.html">Digital Transformation</a>
+                    <a href="services.html">Risk Intelligence</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Get In Touch</a>
+                    <a href="#">Media Inquiries</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Nexelra Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>About Nexelra | The Architect of Global Strategy</title>
+    <meta name="description"
+        content="Discover the heritage, mission, and elite leadership of Nexelra Consulting — a global force in strategic advisory." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* Aggressive Animation Lockdown for About Hero */
+        .about-hero,
+        .about-hero-bg,
+        .about-hero-content,
+        .about-hero-content * {
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════ NAVBAR ══════════════════════════════════════════ -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                <div class="logo-mark">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#gGold)"
+                            stroke-width="1.5" />
+                        <polygon points="18,7 29,13 29,23 18,29 7,23 7,13" fill="url(#gGoldFill)" opacity="0.15" />
+                        <text x="18" y="22" text-anchor="middle" fill="url(#gGold)" font-size="11"
+                            font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                        <defs>
+                            <linearGradient id="gGold" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#D4AF37" />
+                                <stop offset="50%" stop-color="#F5D16A" />
+                                <stop offset="100%" stop-color="#B8960C" />
+                            </linearGradient>
+                            <linearGradient id="gGoldFill" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#D4AF37" />
+                                <stop offset="100%" stop-color="#F5D16A" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-brand">NEXELRA</span>
+                    <span class="logo-tagline">CONSULTING</span>
+                </div>
+            </a>
+
+            <!-- Center Nav Links -->
+            <nav class="nav-links" id="navLinks">
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link" id="homeLink">Home <i
+                            class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu" id="homeDropdown">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="index2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link" id="dashLink">Dashboard <i
+                            class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu" id="dashDropdown">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Right Controls -->
+            <div class="nav-right">
+                <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="globe-btn" id="globeBtn" title="Toggle LTR / RTL" aria-label="Toggle text direction">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="globe-tooltip">LTR / RTL</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-topbar">
+            <button class="drawer-globe" id="drawerGlobe" aria-label="Toggle direction">
+                <i class="fa-solid fa-globe"></i>
+            </button>
+            <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileHomeToggle">
+                    HOME <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileHomeSub">
+                    <a href="index.html" class="drawer-sub-link">Home 1</a>
+                    <a href="index2.html" class="drawer-sub-link">Home 2</a>
+                </div>
+            </div>
+            <div class="drawer-item"><a href="about.html" class="drawer-link">ABOUT</a></div>
+            <div class="drawer-item"><a href="services.html" class="drawer-link">SERVICES</a></div>
+            <div class="drawer-item"><a href="contact.html" class="drawer-link">CONTACT</a></div>
+            <div class="drawer-item has-sub">
+                <button class="drawer-link sub-toggle" id="mobileDashToggle">
+                    DASHBOARD <i class="fa-solid fa-chevron-down drawer-arrow"></i>
+                </button>
+                <div class="drawer-sub" id="mobileDashSub">
+                    <a href="user-dashboard.html" class="drawer-sub-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="drawer-sub-link">Admin Dashboard</a>
+                </div>
+            </div>
+
+            <!-- LOGIN BUTTON -->
+            <a href="login.html" class="btn btn-gold drawer-login-btn">LOGIN</a>
+        </nav>
+        <div class="drawer-footer">
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ SECTION 1 — HERO ══════════════════════════════════════════ -->
+    <section class="section about-hero" id="home">
+        <div class="about-hero-bg"></div>
+        <div class="container">
+            <div class="about-hero-content">
+                <p class="section-eyebrow">Legacy of Excellence</p>
+                <h1 class="hero-title">Beyond Consulting. <br /><span class="gold">Institutional Architecture.</span>
+                </h1>
+                <p class="hero-subtitle">Nexelra was founded on a singular premise: that true strategy requires both the
+                    vision of an artist and the precision of an engineer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 2 — HERITAGE ══════════════════════════════════════════ -->
+    <section class="section about-heritage" id="heritage">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="b5.webp" alt="Nexelra Heritage" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Established 1984</p>
+                    <h2 class="section-title">A Heritage of <span class="gold">Trust</span></h2>
+                    <p class="section-body">Built in the crucible of global financial shifts, Nexelra has evolved from a
+                        boutique advisory into a multi-national architect of corporate destiny. We have steered
+                        thousands of enterprises through decades of volatility.</p>
+                    <div class="heritage-stats">
+                        <div class="h-stat"><span>40+</span> Years</div>
+                        <div class="h-stat"><span>5k+</span> Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 3 — VISION ══════════════════════════════════════════ -->
+    <section class="section about-vision" id="vision">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="about_vision.png" alt="Aspirational Vision" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Our North Star</p>
+                    <h2 class="section-title">Vision & <span class="gold">Dominance</span></h2>
+                    <p class="section-body">Our vision is to redefine the global economic landscape by empowering
+                        visionary leaders with the intelligence, technology, and strategic depth needed to create
+                        lasting legacies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 4 — CORE VALUES ══════════════════════════════════════════ -->
+    <section class="section about-values" id="values">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <p class="section-eyebrow">The Nexelra Code</p>
+                <h2 class="section-title">Our <span class="gold">Core Values</span></h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up">
+                    <div class="value-img-wrap"><img src="b2.jpg" alt="Integrity" /></div>
+                    <div class="value-info">
+                        <h3>Sovereign Integrity</h3>
+                        <p>Our word is our bond. We maintain absolute confidentiality and ethical clarity in every
+                            engagement.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" style="--delay: 0.1s">
+                    <div class="value-img-wrap"><img src="b3.jpeg" alt="Innovation" /></div>
+                    <div class="value-info">
+                        <h3>Predictive Innovation</h3>
+                        <p>We don't react to the market; we anticipate it. Our R&D lab identifies dislocations before
+                            they occur.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" style="--delay: 0.2s">
+                    <div class="value-info">
+                        <div class="value-img-wrap"><img src="b5.webp" alt="Precision" /></div>
+                        <h3>Elite Precision</h3>
+                        <p>In the highest stakes, there is no room for error. We execute with the surgical focus of
+                            masters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 5 — THE COUNCIL ══════════════════════════════════════════ -->
+    <section class="section about-council" id="council">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="con.jpg" alt="The Council" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Elite Leadership</p>
+                    <h2 class="section-title">The <span class="gold">Council</span></h2>
+                    <p class="section-body">Our leadership consists of former Fortune 500 CEOs, Nobel economists, and
+                        technology pioneers. We don't just advise; we bring the weight of lived experience to every
+                        boardroom.</p>
+                    <a href="#" class="btn btn-outline">Meet Our Partners</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 6 — GLOBAL REACH ══════════════════════════════════════════ -->
+    <section class="section about-global" id="global">
+        <div class="container">
+            <div class="global-inner" data-aos="zoom-in">
+                <div class="global-img-wrap">
+                    <img src="globe.jpg" alt="Global Network" class="global-img" />
+                    <div class="global-points">
+                        <!-- CSS animated map points would go here -->
+                    </div>
+                </div>
+                <div class="global-text">
+                    <h2 class="section-title">Global <span class="gold">Sovereignty</span></h2>
+                    <p class="section-body">With hubs in Zurich, Dubai, Singapore, and New York, our network spans the
+                        major financial arteries of the world. We offer boots-on-the-ground intelligence in every major
+                        market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 7 — METHODOLOGY ══════════════════════════════════════════ -->
+    <section class="section about-method" id="method">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="stst.jpg" alt="Methodology" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">The Nexelra Way</p>
+                    <h2 class="section-title">Strategic <span class="gold">Bio-Dynamics</span></h2>
+                    <p class="section-body">We treat organizations as living organisms. Our methodology combines deep
+                        data synthesis with human-centric organizational design to ensure your enterprise is
+                        anti-fragile and ready for growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 8 — PARTNERSHIPS ══════════════════════════════════════════ -->
+    <section class="section about-partners" id="partners">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <p class="section-eyebrow">Collaborative Ecosystem</p>
+                <h2 class="section-title">Strategic <span class="gold">Alliances</span></h2>
+            </div>
+            <div class="partner-logos" data-aos="fade-up">
+                <div class="logo-box"><img src="b3.jpeg" alt="P1" /></div>
+                <div class="logo-box"><img src="b4.jpg" alt="P2" /></div>
+                <div class="logo-box"><img src="b5.webp" alt="P3" /></div>
+                <div class="logo-box"><img src="b6.jpg" alt="P4" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 9 — DIVERSITY ══════════════════════════════════════════ -->
+    <section class="section about-diversity" id="diversity">
+        <div class="container">
+            <div class="about-grid side-by-side">
+                <div class="about-visual" data-aos="fade-right">
+                    <img src="icc.jpg" alt="Diversity" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="section-eyebrow">Strength in Unity</p>
+                    <h2 class="section-title">Inclusive <span class="gold">Intelligence</span></h2>
+                    <p class="section-body">Diversity is not a metric for us; it is our greatest competitive advantage.
+                        Our consultants bring perspectives from over 60 countries and 100+ disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 10 — AWARDS ══════════════════════════════════════════ -->
+    <section class="section about-awards" id="awards">
+        <div class="container">
+            <div class="section-header center" data-aos="fade-up">
+                <p class="section-eyebrow">Industry Recognition</p>
+                <h2 class="section-title">Hall of <span class="gold">Excellence</span></h2>
+                <p class="section-body" style="max-width: 700px; margin: 0 auto;">Our commitment to strategic precision
+                    and visionary leadership has earned us the highest accolades from global economic forums and
+                    industry peers for four decades.</p>
+            </div>
+            <div class="award-shelf" data-aos="fade-up">
+                <div class="award-item">
+                    <span class="award-year">2024</span>
+                    <div class="award-medal">
+                        <img src="glo.jpg" alt="Award 1" />
+                    </div>
+                    <h4>Global Firm of the Year</h4>
+                    <p>Recognized for three consecutive years for outstanding cross-border strategic advisory and
+                        enterprise transformation.</p>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2023</span>
+                    <div class="award-medal">
+                        <img src="ex.jpg" alt="Award 2" />
+                    </div>
+                    <h4>Excellence in M&A</h4>
+                    <p>Awarded for orchestrating some of the decade's most complex sovereign wealth fund acquisitions
+                        and divestments.</p>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2023</span>
+                    <div class="award-medal">
+                        <img src="about_vision.png" alt="Award 3" />
+                    </div>
+                    <h4>Strategic Visionary</h4>
+                    <p>Top honors for pioneering "Category Creation" frameworks that helped six decacorns dominate their
+                        respective markets.</p>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2022</span>
+                    <div class="award-medal">
+                        <img src="aw.jpg" alt="Award 4" />
+                    </div>
+                    <h4>Risk Sovereignty Award</h4>
+                    <p>The industry benchmark for predictive risk intelligence, utilizing our proprietary R&D to
+                        mitigate national-level dislocations.</p>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2021</span>
+                    <div class="award-medal">
+                        <img src="lead.jpg" alt="Award 5" />
+                    </div>
+                    <h4>ESG Leadership Prime</h4>
+                    <p>Awarded by the Global Sustainability Council for our innovative "Carbon Strategy Architecture"
+                        implemented for Fortune 100 firms.</p>
+                </div>
+                <div class="award-item">
+                    <span class="award-year">2020</span>
+                    <div class="award-medal">
+                        <img src="sovereign_advisory.png" alt="Award 6" />
+                    </div>
+                    <h4>Digital Alchemist</h4>
+                    <p>Recognized for leading the most successful legacy-to-hypercloud migration in the financial
+                        services sector history.</p>
+                </div>
+            </div>
+            <div class="award-quote" data-aos="fade-up"
+                style="margin-top: 80px; text-align: center; border-top: 1px solid var(--border); padding-top: 40px;">
+                <p class="quote-text"
+                    style="font-family: var(--font-display); font-size: 1.8rem; font-style: italic; color: var(--gold);">
+                    "Nexelra doesn't just study markets; they dictate the rhythm of future economies through sheer
+                    strategic brilliance."</p>
+                <p class="quote-author"
+                    style="margin-top: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;">
+                    — Global Strategy Forum, 2024 Keynote</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 11 — ESG ══════════════════════════════════════════ -->
+    <section class="section about-esg" id="esg">
+        <div class="container">
+            <div class="about-grid side-by-side reverse">
+                <div class="about-visual" data-aos="fade-left">
+                    <img src="ree.jpg" alt="ESG" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-right">
+                    <p class="section-eyebrow">Future Proofing</p>
+                    <h2 class="section-title">Sustainability <span class="gold">Architecture</span></h2>
+                    <p class="section-body">We help you build an empire that doesn't just survive but thrives alongside
+                        the planet. Integrative ESG is woven into the DNA of every strategy we build.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ SECTION 12 — CTA ══════════════════════════════════════════ -->
+    <section class="section about-cta" id="cta">
+        <div class="about-cta-bg"></div>
+        <div class="container">
+            <div class="about-cta-content" data-aos="zoom-in">
+                <h2 class="section-title">Your Next Chapter <span class="gold">Begins Here</span></h2>
+                <p class="section-body">The most successful institutions in the world trust Nexelra when the stakes are
+                    highest. Are you ready?</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-gold">Contact Our Partners</a>
+                    <a href="services.html" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ FOOTER ══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="logo-mark">
+                            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+                                <polygon points="18,2 34,10 34,26 18,34 2,26 2,10" fill="none" stroke="url(#fGold)"
+                                    stroke-width="1.5" />
+                                <text x="18" y="22" text-anchor="middle" fill="url(#fGold)" font-size="11"
+                                    font-family="Cormorant Garamond" font-weight="700" letter-spacing="1">NX</text>
+                                <defs>
+                                    <linearGradient id="fGold" x1="0" y1="0" x2="36" y2="36"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="100%" stop-color="#F5D16A" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-brand">NEXELRA</span>
+                            <span class="logo-tagline">CONSULTING</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Elevating enterprises through strategic clarity, execution excellence, and
+                        transformative leadership — globally.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="#council">Leadership</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Insights</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">Strategy Advisory</a>
+                    <a href="services.html">M&A Consulting</a>
+                    <a href="services.html">Digital Transformation</a>
+                    <a href="services.html">Risk Intelligence</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Get In Touch</a>
+                    <a href="#">Media Inquiries</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Nexelra Consulting. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

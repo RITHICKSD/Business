@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>User Dashboard | Nexelra Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="dash-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="sidebar-header">
+                <button class="dash-close-btn" id="dashSidebarClose" title="Close Sidebar" style="display: none;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <a href="index.html" class="nav-logo" style="text-decoration: none;">
+                    <div class="logo-mark">
+                        <svg width="38" height="38" viewBox="0 0 100 100">
+                            <!-- Outer Gold Hexagon -->
+                            <polygon points="50,5 93,30 93,70 50,95 7,70 7,30" fill="none" stroke="var(--gold)"
+                                stroke-width="4" />
+                            <!-- Inner Dark Hexagon Fill -->
+                            <polygon points="50,12 85,32 85,68 50,88 15,68 15,32" fill="rgba(20,28,40,0.8)" />
+                            <text x="50" y="60" text-anchor="middle" fill="var(--gold)" font-size="24"
+                                font-family="var(--font-display)" font-weight="700">NX</text>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-brand">NEXELRA</span>
+                        <span class="logo-tagline">CONSULTING</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-label">General</div>
+                <a href="#" class="side-link active" data-tab="overview">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="side-link" data-tab="strategy">
+                    <i class="fa-solid fa-chess-knight"></i>
+                    <span>Strategy Board</span>
+                </a>
+
+                <div class="sidebar-label">Strategic</div>
+                <a href="#" class="side-link" data-tab="portfolio">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Portfolio Albedo</span>
+                </a>
+                <a href="#" class="side-link" data-tab="compliance">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Compliance</span>
+                </a>
+                <a href="#" class="side-link" data-tab="reports">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span>Financial Reports</span>
+                </a>
+
+                <div class="sidebar-label">Support</div>
+                <a href="index.html" class="side-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span style="color:red;">Logout</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="sidebar-globe-btn" id="dashGlobe" title="Toggle LTR/RTL">
+                    <i class="fa-solid fa-globe"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dash-main">
+            <!-- Mobile Toggle -->
+            <button class="dash-menu-toggle" id="dashMenuToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <header class="dash-header">
+                <div class="dash-title">
+                    <h2 id="currentTabTitle">Strategic Overview</h2>
+                    <p id="currentTabSubtitle">Real-time intelligence and execution monitoring.</p>
+                </div>
+                <div class="dash-controls">
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fa-solid fa-download"></i> Export Analytics
+                    </button>
+                    <a href="index.html" class="btn btn-gold btn-sm">Exit Terminal</a>
+                </div>
+            </header>
+
+            <div id="dashContent">
+                <!-- 1. OVERVIEW -->
+                <div class="tab-content active" id="overview">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Market Velocity</div>
+                            <div class="kpi-value">84.2%</div>
+                            <div class="kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +12.4%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Assets Managed</div>
+                            <div class="kpi-value">$2.4B</div>
+                            <div class="kpi-trend up"><i class="fa-solid fa-plus"></i> Institutional</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Risk Rating</div>
+                            <div class="kpi-value">AA+</div>
+                            <div class="kpi-trend"><i class="fa-solid fa-shield"></i> Secure</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Active Mandates</div>
+                            <div class="kpi-value">12</div>
+                            <div class="kpi-trend down"><i class="fa-solid fa-clock"></i> 2 Pending</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Performance Vector</h3>
+                            <div class="graph-bars">
+                                <div class="bar-col" data-label="JAN">
+                                    <div class="bar-fill" style="height: 45%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="FEB">
+                                    <div class="bar-fill" style="height: 62%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="MAR">
+                                    <div class="bar-fill" style="height: 85%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="APR">
+                                    <div class="bar-fill" style="height: 72%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="MAY">
+                                    <div class="bar-fill" style="height: 94%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Entity Stats</h3>
+                            <div class="infographic-list">
+                                <div class="info-item"><label>Node Alpha</label><span>Optimal</span></div>
+                                <div class="info-item"><label>Synapse Load</label><span>42%</span></div>
+                                <div class="info-item"><label>Latency</label><span>0.8ms</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Trend Analysis</h3>
+                            <div class="graph-lines">
+                                <svg class="line-svg">
+                                    <path class="line-path" d="M0,150 L100,120 L200,160 L300,80 L400,40"></path>
+                                </svg>
+                                <div class="line-point" style="left: 0%; bottom: 25%;"></div>
+                                <div class="line-point" style="left: 25%; bottom: 40%;"></div>
+                                <div class="line-point" style="left: 50%; bottom: 20%;"></div>
+                                <div class="line-point" style="left: 75%; bottom: 60%;"></div>
+                                <div class="line-point" style="left: 100%; bottom: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Resource Efficiency</h3>
+                            <div class="rings-grid">
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 85"><span>85%</span></div>
+                                    <div class="ring-label">Compute</div>
+                                </div>
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 62"><span>62%</span></div>
+                                    <div class="ring-label">Storage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Sector Allocation</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Technology</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Energy</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 60%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Healthcare</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 72%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>System Albedo</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(45deg);"></div>
+                                <div class="radar-line" style="transform: rotate(135deg);"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Activity Heatmap</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Risk Dispersion</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="bottom: 20%; left: 10%;"></div>
+                                <div class="dot" style="bottom: 50%; left: 30%;"></div>
+                                <div class="dot" style="bottom: 80%; left: 50%;"></div>
+                                <div class="dot" style="bottom: 40%; left: 70%;"></div>
+                                <div class="dot" style="bottom: 60%; left: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. STRATEGY BOARD -->
+                <div class="tab-content" id="strategy">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Execution Rate</div>
+                            <div class="kpi-value">92%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Directives</div>
+                            <div class="kpi-value">08</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Board Alignment</div>
+                            <div class="kpi-value">High</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Time to Market</div>
+                            <div class="kpi-value">14d</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Deployment Intensity</h3>
+                            <div class="graph-bubbles">
+                                <div class="bubble" style="width: 80px; height: 80px; top: 20px; left: 20px;">AI Core
+                                </div>
+                                <div class="bubble" style="width: 60px; height: 60px; top: 120px; left: 110px;">Cloud
+                                </div>
+                                <div class="bubble" style="width: 90px; height: 90px; top: 40px; right: 30px;">Strategy
+                                </div>
+                                <div class="bubble" style="width: 50px; height: 50px; bottom: 20px; right: 100px;">Audit
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Objective Rings</h3>
+                            <div class="rings-grid">
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 94"><span>94%</span></div>
+                                    <div class="ring-label">Revenue</div>
+                                </div>
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 78"><span>78%</span></div>
+                                    <div class="ring-label">Growth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card mt-20">
+                        <h3>Strategic Phases</h3>
+                        <div class="graph-bars">
+                            <div class="bar-col" data-label="Phase 1">
+                                <div class="bar-fill" style="height: 90%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Phase 2">
+                                <div class="bar-fill" style="height: 70%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Phase 3">
+                                <div class="bar-fill" style="height: 40%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Phase 4">
+                                <div class="bar-fill" style="height: 15%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Execution Flow</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Planning</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Internal Audit</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Global Outreach</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 40%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Strategic Radar</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(90deg);"></div>
+                                <div class="radar-line" style="transform: rotate(0deg);"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Market Heat</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Asset Density Map</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="bottom: 10%; left: 20%;"></div>
+                                <div class="dot" style="bottom: 80%; left: 40%;"></div>
+                                <div class="dot" style="bottom: 30%; left: 60%;"></div>
+                                <div class="dot" style="bottom: 70%; left: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. PORTFOLIO ALBEDO -->
+                <div class="tab-content" id="portfolio">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Net Albedo</div>
+                            <div class="kpi-value">$840M</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">YoY Growth</div>
+                            <div class="kpi-value">+28%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Liquidity</div>
+                            <div class="kpi-value">84%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Diversification</div>
+                            <div class="kpi-value">0.92</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Growth Curve</h3>
+                            <div class="graph-lines">
+                                <svg class="line-svg">
+                                    <path class="line-path" d="M0,180 L80,140 L160,110 L240,150 L320,80 L400,20"></path>
+                                </svg>
+                                <div class="line-point" style="left: 0%; bottom: 10%;"></div>
+                                <div class="line-point" style="left: 20%; bottom: 30%;"></div>
+                                <div class="line-point" style="left: 40%; bottom: 45%;"></div>
+                                <div class="line-point" style="left: 60%; bottom: 25%;"></div>
+                                <div class="line-point" style="left: 80%; bottom: 60%;"></div>
+                                <div class="line-point" style="left: 100%; bottom: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Asset Intensity</h3>
+                            <div class="graph-bars">
+                                <div class="bar-col" data-label="Eq">
+                                    <div class="bar-fill" style="height: 80%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="Cr">
+                                    <div class="bar-fill" style="height: 30%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="Bo">
+                                    <div class="bar-fill" style="height: 50%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="Go">
+                                    <div class="bar-fill" style="height: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-table-card">
+                        <h3>Portfolio Distribution</h3>
+                        <table class="stat-table">
+                            <thead>
+                                <tr>
+                                    <th>Entity</th>
+                                    <th>Albedo</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vanguard Alpha</td>
+                                    <td class="val-gold">$120M</td>
+                                    <td>Active</td>
+                                </tr>
+                                <tr>
+                                    <td>BlackRock Synapse</td>
+                                    <td class="val-gold">$240M</td>
+                                    <td>Optimal</td>
+                                </tr>
+                                <tr>
+                                    <td>Swiss Custody</td>
+                                    <td class="val-gold">$85M</td>
+                                    <td>Verified</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Capital Liquidity</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Immediate</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>30-Day</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 65%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Long Term</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Vault Security</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(30deg);"></div>
+                                <div class="radar-line" style="transform: rotate(60deg);"></div>
+                                <div class="radar-line" style="transform: rotate(90deg);"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Risk Heatmap</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Asset Trajectory</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="top: 20%; left: 15%;"></div>
+                                <div class="dot" style="top: 40%; left: 45%;"></div>
+                                <div class="dot" style="top: 10%; left: 75%;"></div>
+                                <div class="dot" style="top: 60%; left: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. COMPLIANCE -->
+                <div class="tab-content" id="compliance">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Audit Status</div>
+                            <div class="kpi-value">Clean</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Regulatory Albedo</div>
+                            <div class="kpi-value">100%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Open Alerts</div>
+                            <div class="kpi-value">02</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Data Privacy</div>
+                            <div class="kpi-value">Secure</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Alert Density</h3>
+                            <div class="graph-bubbles">
+                                <div class="bubble"
+                                    style="width: 70px; height: 70px; top: 30px; left: 40px; background: #F44336;">GDPR
+                                </div>
+                                <div class="bubble" style="width: 50px; height: 50px; top: 130px; left: 160px;">SEC
+                                </div>
+                                <div class="bubble" style="width: 80px; height: 80px; bottom: 30px; right: 50px;">FINMA
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Regional Compliance</h3>
+                            <div class="rings-grid">
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 100"><span>100%</span></div>
+                                    <div class="ring-label">EU</div>
+                                </div>
+                                <div class="progress-ring-item">
+                                    <div class="progress-ring" style="--p: 92"><span>92%</span></div>
+                                    <div class="ring-label">APAC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card mt-20">
+                        <h3>Integrity Over Time</h3>
+                        <div class="graph-bars">
+                            <div class="bar-col" data-label="Q1">
+                                <div class="bar-fill" style="height: 100%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Q2">
+                                <div class="bar-fill" style="height: 98%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Q3">
+                                <div class="bar-fill" style="height: 99%;"></div>
+                            </div>
+                            <div class="bar-col" data-label="Q4">
+                                <div class="bar-fill" style="height: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Protocol Adherence</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Data Privacy</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Network Scans</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 88%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>User Access</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Security Shield</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(45deg); width: 120%;"></div>
+                                <div class="radar-line" style="transform: rotate(-45deg); width: 120%;"></div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Patch Distribution</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Vulnerability Matrix</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="bottom: 5%; left: 5%;"></div>
+                                <div class="dot" style="bottom: 15%; left: 25%;"></div>
+                                <div class="dot" style="bottom: 10%; left: 50%;"></div>
+                                <div class="dot" style="bottom: 25%; left: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. FINANCIAL REPORTS -->
+                <div class="tab-content" id="reports">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-label">Gross Margin</div>
+                            <div class="kpi-value">62.8%</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">OpEx Albedo</div>
+                            <div class="kpi-value">$12.4M</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Cash Reserve</div>
+                            <div class="kpi-value">$450M</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-label">Tax Efficiency</div>
+                            <div class="kpi-value">High</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Revenue Flux</h3>
+                            <div class="graph-lines">
+                                <svg class="line-svg">
+                                    <path class="line-path" d="M0,150 L100,50 L200,100 L300,30 L400,60"></path>
+                                </svg>
+                                <div class="line-point" style="left: 0%; bottom: 25%;"></div>
+                                <div class="line-point" style="left: 25%; bottom: 75%;"></div>
+                                <div class="line-point" style="left: 50%; bottom: 50%;"></div>
+                                <div class="line-point" style="left: 75%; bottom: 85%;"></div>
+                                <div class="line-point" style="left: 100%; bottom: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Capital Flow</h3>
+                            <div class="graph-bars">
+                                <div class="bar-col" data-label="W1">
+                                    <div class="bar-fill" style="height: 40%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="W2">
+                                    <div class="bar-fill" style="height: 75%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="W3">
+                                    <div class="bar-fill" style="height: 30%;"></div>
+                                </div>
+                                <div class="bar-col" data-label="W4">
+                                    <div class="bar-fill" style="height: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-table-card">
+                        <h3>Operating Expenditures</h3>
+                        <table class="stat-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Budget</th>
+                                    <th>Burn Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Infrastructure</td>
+                                    <td class="val-gold">$4.2M</td>
+                                    <td>Normal</td>
+                                </tr>
+                                <tr>
+                                    <td>Strategy Retainer</td>
+                                    <td class="val-gold">$1.8M</td>
+                                    <td>Optimized</td>
+                                </tr>
+                                <tr>
+                                    <td>Personnel</td>
+                                    <td class="val-gold">$6.4M</td>
+                                    <td>Stable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-container mt-20">
+                        <div class="chart-card">
+                            <h3>Burn Velocity</h3>
+                            <div class="graph-bars-horizontal">
+                                <div class="bar-row">
+                                    <label>Q1 Spend</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-row">
+                                    <label>Q2 Spend</label>
+                                    <div class="bar-track">
+                                        <div class="bar-progress" style="width: 82%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Financial Health</h3>
+                            <div class="graph-radar-ring">
+                                <div class="radar-line" style="transform: rotate(0deg); border-color: var(--gold);">
+                                </div>
+                                <div class="radar-line" style="transform: rotate(180deg); border-color: var(--gold);">
+                                </div>
+                                <div class="radar-core"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <h3>Expense Heatmap</h3>
+                            <div class="graph-heatmap">
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-high"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                                <div class="heatmap-cell cell-mid"></div>
+                                <div class="heatmap-cell cell-low"></div>
+                            </div>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Profitability Clusters</h3>
+                            <div class="graph-scatter">
+                                <div class="dot" style="bottom: 70%; left: 20%;"></div>
+                                <div class="dot" style="bottom: 90%; left: 45%;"></div>
+                                <div class="dot" style="bottom: 85%; left: 70%;"></div>
+                                <div class="dot" style="bottom: 95%; left: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
