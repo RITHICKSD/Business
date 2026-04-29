@@ -73,6 +73,11 @@
             </nav>
             <div class="nav-right">
                 <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="theme-toggle" id="themeBtn" title="Toggle Light/Dark" aria-label="Toggle color theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                    <span class="theme-tooltip">Dark / Light</span>
+                </button>
                 <button class="globe-btn" id="globeBtn"><i class="fa-solid fa-globe"></i></button>
                 <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
             </div>
@@ -81,6 +86,10 @@
 
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-topbar">
+            <button class="drawer-theme" id="drawerTheme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
             <button class="drawer-globe" id="drawerGlobe"><i class="fa-solid fa-globe"></i></button>
             <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
         </div>
@@ -118,7 +127,7 @@
     <section class="contact-hero">
         <div class="container">
             <p class="section-eyebrow">Direct Uplink</p>
-            <h1 class="hero-title">Establish <span class="gold">Connectivity</span></h1>
+            <h1 class="hero-title"><span style="color: var(--white);">Establish</span> <span class="gold">Connectivity</span></h1>
             <p class="hero-subtitle">The command center for global enterprise transformation is at your service. Secure
                 channels for visionary leadership.</p>
         </div>

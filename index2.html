@@ -83,6 +83,11 @@
             <!-- Right Controls -->
             <div class="nav-right">
                 <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="theme-toggle" id="themeBtn" title="Toggle Light/Dark" aria-label="Toggle color theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                    <span class="theme-tooltip">Dark / Light</span>
+                </button>
                 <button class="globe-btn" id="globeBtn" title="Toggle LTR / RTL" aria-label="Toggle text direction">
                     <i class="fa-solid fa-globe"></i>
                     <span class="globe-tooltip">LTR / RTL</span>
@@ -97,6 +102,10 @@
     <!-- Mobile Drawer (Replicated from index.html) -->
     <div class="mobile-drawer" id="mobileDrawer">
         <div class="drawer-topbar">
+            <button class="drawer-theme" id="drawerTheme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
             <button class="drawer-globe" id="drawerGlobe" aria-label="Toggle direction">
                 <i class="fa-solid fa-globe"></i>
             </button>
@@ -199,28 +208,6 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════ SECTION 4 — SOVEREIGN STRATEGY ══════════════════════════════════════════ -->
-    <section class="section sovereign-section" id="sovereign">
-        <div class="sovereign-bg"></div>
-        <div class="container">
-            <div class="sovereign-wrapper">
-                <div class="sovereign-card" data-aos="fade-right">
-                    <p class="section-eyebrow">Large-Scale Advisory</p>
-                    <h2 class="section-title">Sovereign-Grade <br /><span class="gold">Strategic Briefings</span></h2>
-                    <p class="section-body">We advise G20 governments, sovereign wealth funds, and Fortune 50
-                        enterprises on
-                        national-level economic shifts and multi-decade legacy planning.</p>
-                    <div class="sovereign-action" style="margin-top: 40px;">
-                        <a href="#" class="btn btn-blue-box">Explore Private Sector Advisory <i
-                                class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="sovereign-visual" data-aos="fade-left">
-                    <img src="sovereign_advisory.png" alt="Sovereign Strategy Visual" class="sovereign-img" />
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ══════════════════════════════════════════ SECTION 5 — CYBER CITADEL ══════════════════════════════════════════ -->
     <section class="section cyber-section" id="cyber">
@@ -337,37 +324,6 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════ SECTION 9 — DEAL ARCHITECTURE (M&A) ══════════════════════════════════════════ -->
-    <section class="section deal-section" id="deals">
-        <div class="container">
-            <div class="deal-header" data-aos="fade-up">
-                <p class="section-eyebrow">Transactional Excellence</p>
-                <h2 class="section-title">Deal <span class="gold">Architecture</span></h2>
-                <p class="section-body">Mastering complexity in cross-border acquisitions and divestitures.</p>
-            </div>
-            <div class="deal-steps">
-                <div class="deal-step" data-aos="zoom-in" style="--delay: 0s">
-                    <span class="d-num">P1</span>
-                    <h4>Origination</h4>
-                </div>
-                <div class="deal-line"></div>
-                <div class="deal-step" data-aos="zoom-in" style="--delay: 0.1s">
-                    <span class="d-num">P2</span>
-                    <h4>Structure</h4>
-                </div>
-                <div class="deal-line"></div>
-                <div class="deal-step" data-aos="zoom-in" style="--delay: 0.2s">
-                    <span class="d-num">P3</span>
-                    <h4>Synergy</h4>
-                </div>
-                <div class="deal-line"></div>
-                <div class="deal-step" data-aos="zoom-in" style="--delay: 0.3s">
-                    <span class="d-num">P4</span>
-                    <h4>Legacy</h4>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ══════════════════════════════════════════ SECTION 10 — PEOPLE DNA ══════════════════════════════════════════ -->
     <section class="section people-section" id="people">
@@ -414,29 +370,6 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════ SECTION 12 — BRAND SOVEREIGNTY ══════════════════════════════════════════ -->
-    <section class="section brand-section" id="branding">
-        <div class="container">
-            <div class="brand-grid">
-                <div class="brand-main" data-aos="fade-right">
-                    <p class="section-eyebrow">Brand Equity</p>
-                    <h2 class="section-title">Brand <span class="gold">Sovereignty</span></h2>
-                    <p class="section-body">Moving beyond "marketing" to create a standard of excellence that defines
-                        its own category.
-                        We help you become synonymous with the best.</p>
-                    <a href="#" class="btn btn-outline">Review Our Brand Works</a>
-                </div>
-                <div class="brand-item" data-aos="fade-up">
-                    <span class="b-number">01</span>
-                    <h4>Prestige Mapping</h4>
-                </div>
-                <div class="brand-item" data-aos="fade-up" style="--delay: 0.1s">
-                    <span class="b-number">02</span>
-                    <h4>Category Creation</h4>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ══════════════════════════════════════════ SECTION 13 — REGULATORY SHIELD ══════════════════════════════════════════ -->
     <section class="section shield-section" id="compliance">
@@ -455,28 +388,6 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════════════ SECTION 14 — VENTURE STUDIO ══════════════════════════════════════════ -->
-    <section class="section venture-section" id="venture">
-        <div class="container">
-            <div class="venture-box">
-                <div class="venture-text" data-aos="fade-right">
-                    <p class="section-eyebrow">High-Growth Support</p>
-                    <h2 class="section-title">The <span class="gold">Venture Studio</span></h2>
-                    <p class="section-body">Helping unicorns scale into decacorns. We provide the institutional
-                        firepower
-                        usually reserved for legacy giants to the world's most disruptive startups.</p>
-                    <div class="venture-cta">
-                        <a href="contact.html" class="btn btn-gold">Inquire for Series C+</a>
-                    </div>
-                </div>
-                <div class="venture-visual" data-aos="zoom-in">
-                    <div class="v-rocket">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ══════════════════════════════════════════ SECTION 15 — THE VAULT ══════════════════════════════════════════ -->
     <section class="section vault-section" id="vault">

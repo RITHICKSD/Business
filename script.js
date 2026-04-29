@@ -113,7 +113,33 @@ const drawerGlobe = qs('#drawerGlobe');
 if (drawerGlobe) drawerGlobe.addEventListener('click', toggleRtl);
 
 /* ══════════════════════════════════════════════════════════════
-   4. ANIMATED PARTICLES — Hero & CTA
+   4. THEME TOGGLE — DARK / LIGHT
+   ══════════════════════════════════════════════════════════════ */
+function toggleTheme() {
+  const body = document.body;
+  const isLight = body.classList.toggle('light-mode');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+  // Animation lock like RTL
+  body.classList.add('no-transition');
+  setTimeout(() => body.classList.remove('no-transition'), 10);
+}
+
+// Apply saved theme on load
+(function applyTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+})();
+
+const themeToggles = document.querySelectorAll('.theme-toggle, #themeBtn, #drawerTheme, #dashTheme');
+themeToggles.forEach(btn => {
+  btn.addEventListener('click', toggleTheme);
+});
+
+/* ══════════════════════════════════════════════════════════════
+   5. ANIMATED PARTICLES — Hero & CTA
    ══════════════════════════════════════════════════════════════ */
 function createParticles(containerId, count = 35) {
   const container = qs(`#${containerId}`);
@@ -599,3 +625,42 @@ if (document.readyState === 'loading') {
 } else {
   initDashboard();
 }
+
+/* ══════════════════════════════════════════════════════════════
+   15. ACTIVE PAGE DETECTION
+   ══════════════════════════════════════════════════════════════ */
+function highlightActiveNav() {
+  const currentPath = window.location.pathname;
+  const fileName = currentPath.split('/').pop() || 'index.html';
+
+  // Desktop Links
+  qsa('.nav-link, .dropdown-item').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === fileName) {
+      link.classList.add('active');
+      // If it's a dropdown item, also highlight the parent
+      const parentDropdown = link.closest('.nav-item.has-dropdown');
+      if (parentDropdown) {
+        const parentLink = parentDropdown.querySelector('.nav-link');
+        if (parentLink) parentLink.classList.add('active');
+      }
+    }
+  });
+
+  // Mobile Links
+  qsa('.drawer-link, .drawer-sub-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === fileName) {
+      link.classList.add('active');
+      // If it's a sub-link, open the parent sub-menu
+      const parentSub = link.closest('.drawer-sub');
+      if (parentSub) {
+        parentSub.classList.add('open');
+        const parentItem = parentSub.closest('.drawer-item');
+        if (parentItem) parentItem.classList.add('sub-open');
+      }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', highlightActiveNav);

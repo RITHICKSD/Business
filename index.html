@@ -101,6 +101,11 @@
             <!-- Right Controls -->
             <div class="nav-right">
                 <a href="login.html" class="btn btn-gold header-login-btn">LOGIN</a>
+                <button class="theme-toggle" id="themeBtn" title="Toggle Light/Dark" aria-label="Toggle color theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                    <span class="theme-tooltip">Dark / Light</span>
+                </button>
                 <button class="globe-btn" id="globeBtn" title="Toggle LTR / RTL" aria-label="Toggle text direction">
                     <i class="fa-solid fa-globe"></i>
                     <span class="globe-tooltip">LTR / RTL</span>
@@ -119,6 +124,10 @@
     <div class="mobile-drawer" id="mobileDrawer">
         <!-- Drawer Top Bar -->
         <div class="drawer-topbar">
+            <button class="drawer-theme" id="drawerTheme" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
             <button class="drawer-globe" id="drawerGlobe" aria-label="Toggle direction">
                 <i class="fa-solid fa-globe"></i>
             </button>
