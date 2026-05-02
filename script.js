@@ -88,16 +88,26 @@ initSubToggle('mobileDashToggle', 'mobileDashSub');
    ══════════════════════════════════════════════════════════════ */
 function toggleRtl() {
   const html = document.documentElement;
-  const isRtl = html.getAttribute('dir') === 'rtl';
+  const isCurrentlyRtl = html.getAttribute('dir') === 'rtl';
+  const nextDir = isCurrentlyRtl ? 'ltr' : 'rtl';
+  const nextText = nextDir.toUpperCase();
 
   // Instant switch — disable transitions/animations momentarily
   html.classList.add('no-transition');
   document.body.classList.add('no-transition');
 
-  html.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+  html.setAttribute('dir', nextDir);
+  localStorage.setItem('dir', nextDir);
 
-  const globe = qs('#globeBtn');
-  if (globe) globe.style.transform = isRtl ? 'rotate(0deg)' : 'rotate(180deg)';
+  // Update all globe buttons to show the NEW state text
+  const allGlobeBtns = document.querySelectorAll('#globeBtn, #drawerGlobe, #dashGlobe, .auth-globe, .sidebar-globe-btn, .globe-btn');
+  allGlobeBtns.forEach(btn => {
+    // We only want to update the text, not touch the tooltip if it's a separate span
+    // But most are simple buttons now. Let's just set textContent for simplicity 
+    // and re-add tooltip if needed, or better, just target the text.
+    // For now, let's assume we want the button to just contain the text.
+    btn.innerHTML = `<span>${nextText}</span>`;
+  });
 
   // Tiny delay to allow reflow, then re-enable
   setTimeout(() => {
@@ -105,6 +115,20 @@ function toggleRtl() {
     document.body.classList.remove('no-transition');
   }, 10);
 }
+
+// Apply saved direction on load
+(function applyDirection() {
+  const savedDir = localStorage.getItem('dir') || 'ltr';
+  document.documentElement.setAttribute('dir', savedDir);
+  const nextText = savedDir.toUpperCase();
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    const allGlobeBtns = document.querySelectorAll('#globeBtn, #drawerGlobe, #dashGlobe, .auth-globe, .sidebar-globe-btn, .globe-btn');
+    allGlobeBtns.forEach(btn => {
+      btn.innerHTML = `<span>${nextText}</span>`;
+    });
+  });
+})();
 
 const globeBtn = qs('#globeBtn');
 if (globeBtn) globeBtn.addEventListener('click', toggleRtl);
