@@ -76,13 +76,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <button class="theme-toggle" id="dashTheme" title="Toggle Light/Dark" aria-label="Toggle color theme">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-                <button class="sidebar-globe-btn" id="dashGlobe" title="Toggle LTR/RTL">
-                    <span>LTR</span>
-                </button>
+                <p style="font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em;">© 2025 Nexelra Consulting | Admin Mode</p>
             </div>
         </aside>
 
@@ -100,9 +94,19 @@
                 </div>
                 <div class="dash-controls">
                     <div class="admin-badge">
-                        <i class="fa-solid fa-shield-check"></i> Root Access Enabled
+                        <i class="fa-solid fa-shield-check"></i> Root Access
                     </div>
-                    <button class="btn btn-gold btn-sm">Force Refresh</button>
+                    <button class="theme-toggle" id="dashTheme" title="Toggle Light/Dark" aria-label="Toggle color theme">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+                    <button class="sidebar-globe-btn" id="dashGlobe" title="Toggle LTR/RTL">
+                        <span>LTR</span>
+                    </button>
+                    <div class="dash-profile-trigger" id="profileTrigger" title="Admin Profile">
+                        <div class="profile-avatar" style="background: var(--gold-dark); color: #000;">RT</div>
+                        <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                    </div>
                 </div>
             </header>
 

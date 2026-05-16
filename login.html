@@ -61,7 +61,7 @@
                         <span class="logo-tagline">CONSULTING</span>
                     </div>
                 </a>
-                <h2 class="auth-title">Welcome back! Please login to your account</h2>
+                <h2 class="auth-title">Welcome back! <span class="gold">Please login to your account</span></h2>
             </div>
 
             <form class="auth-form" action="user-dashboard.html">
@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="auth-actions">
-                    <a href="#" class="forgot-pwd">?Forgot password</a>
+                    <a href="#" class="forgot-pwd"><i class="fa-solid fa-lock-open" style="font-size: 0.8rem; margin-right: 5px;"></i>Forgot password</a>
                     <!-- Using RTL switch the order will naturally flip -->
                     <label class="remember-me">
                         <span>Remember me</span>
@@ -115,9 +115,12 @@
                             fill="#fff" />
                     </svg> Continue with Facebook
                 </button>
+                <button type="button" class="btn btn-social">
+                    <i class="fa-brands fa-apple" style="font-size: 1.2rem; margin-right: 8px;"></i> Continue with Apple
+                </button>
 
                 <p class="auth-footer-text">
-                    Don't have an account? <a href="register.html">Register here</a>
+                    Don't have an account? <a href="register.html" class="gold">Register here</a>
                 </p>
             </form>
         </div>
