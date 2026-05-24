@@ -1079,6 +1079,20 @@ body.light-mode .drawer-theme .fa-sun {
   line-height: 1.75;
 }
 
+@media (min-width: 1025px) {
+  .service-hero-content .hero-subtitle,
+  .about-hero-content .hero-subtitle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  [dir="rtl"] .service-hero-content .hero-subtitle,
+  [dir="rtl"] .about-hero-content .hero-subtitle {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
 .hero-cta-group {
   display: flex;
   gap: 16px;
@@ -6569,4 +6583,35 @@ body.light-mode .auth-controls button {
 [dir="rtl"] .drawer-sub-link.active {
   border-left: none;
   border-right: 3px solid var(--gold);
+}
+
+/* ── EXPERT CONSULTATION FORM ────────────────────────────── */
+.expert-consultation-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--surface);
+  padding: 50px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+}
+
+.expert-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+.expert-form .form-group {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .expert-consultation-card {
+    padding: 30px 20px;
+  }
+  .expert-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
